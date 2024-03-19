@@ -1,0 +1,51 @@
+<nav id="nav" class="py-24 lg:py-0 h-full w-full bg-accent text-black fixed top-0 lg:right-0 right-[-100%] z-10 transition-all lg:relative lg:w-[266px] fadeInAnimation">
+  <ul class="flex flex-col items-center justify-center h-full">
+    <li class="nav-link font-bold text-xl w-full text-center h-full cursor-pointer hover:bg-muted-accent">
+      <a href="#who-am-i" class="w-full h-full flex items-center justify-center"><span class="fill-text">Who Am I?</span></a>
+    </li>
+    <li class="nav-link font-bold text-xl w-full text-center h-full cursor-pointer hover:bg-muted-accent">
+      <a href="#skills" class="w-full h-full flex items-center justify-center"><span class="fill-text">Skills</span></a>
+    </li>
+    <li class="nav-link font-bold text-xl w-full text-center h-full cursor-pointer hover:bg-muted-accent">
+      <a href="#projects" class="w-full h-full flex items-center justify-center"><span class="fill-text">Projects</span></a>
+    </li>
+    <li class="nav-link font-bold text-xl w-full text-center h-full cursor-pointer hover:bg-muted-accent">
+      <a href="#experience" class="w-full h-full flex items-center justify-center"><span class="fill-text">Experience</span></a>
+    </li>
+    <li class="nav-link font-bold text-xl w-full text-center h-full cursor-pointer hover:bg-muted-accent">
+      <a href="#contact" class="w-full h-full flex items-center justify-center"><span class="fill-text">Contact</span></a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .active {
+    right: 0;
+  }
+
+  @keyframes fillText {
+    from {
+      background-position: 100% 0;
+    }
+    to {
+      background-position: 0 0;
+    }
+  }
+
+  .fill-text {
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(90deg, white 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position .7s;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Aplicar el efecto de "llenado de texto" a todos los elementos <li> al hacer hover */
+  li:hover .fill-text {
+    background-position: 0 0;
+    animation: none; /* Anular la animación al hacer hover en el li */
+  }
+</style>

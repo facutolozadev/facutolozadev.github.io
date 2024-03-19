@@ -1,0 +1,22 @@
+---
+import {
+    AngularIcon, 
+    GitHubIcon, AstroIcon, 
+    GitIcon, 
+    HTMLIcon,
+    JavascriptIcon, 
+    NextJSIcon,
+    ReactIcon,
+    TailwindIcon,
+    TypeScriptIcon
+} from '../icons/index.ts'
+
+const {
+  skill: { Icon, name },
+} = Astro.props;
+---
+
+<li class="flex items-center gap-2 ">
+  <h3 class="font-bold text-md">{name}</h3>
+    <Icon/>
+</li>

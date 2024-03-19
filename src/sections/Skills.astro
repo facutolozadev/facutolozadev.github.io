@@ -1,0 +1,23 @@
+---
+import SkillBox from "../components/SkillBox.astro";
+---
+
+<section
+  id="skills"
+  class="w-full flex flex-col justify-center items-center gap-24 px-4 min-h-screen py-24"
+>
+  <h2 class="text-3xl font-bold mt-24  lg:mt-0 hiddenElement">Skills</h2>
+  <div
+    class="flex flex-col items-center w-full lg:flex-row justify-center hiddenElement"
+  >
+    <SkillBox section="main" title="Main Skills" sx="py-[67.2px]" />
+
+    <div
+      class="flex flex-col items-center gap-9 mt-8 lg:mt-0 px-6 w-full lg:w-fit"
+    >
+      <SkillBox section="learning" title="Currently learning" sx="py-4" />
+
+      <SkillBox section="basics" title="Basics" sx="py-4 " />
+    </div>
+  </div>
+</section>

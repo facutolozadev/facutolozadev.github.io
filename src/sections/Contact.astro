@@ -1,0 +1,96 @@
+---
+import Button from "../components/Button.astro";
+
+import Linkedin from "../icons/linkedin.astro";
+
+import { GitHubIcon } from "../icons";
+---
+
+<section
+  id="contact"
+  class="min-h-screen w-full flex flex-col justify-center items-center py-24 gap-24 px-8"
+>
+  <h2 class="text-3xl font-bold lg:mt-0 hiddenElement">Contact</h2>
+  <div
+    class="flex flex-col gap-12 items-center w-full md:flex-row justify-center md:gap-24"
+  >
+    <form
+      id="contactForm"
+      class="flex flex-col gap-8 max-w-[500px] w-full hiddenElement"
+      action="#"
+      method="post"
+    >
+      <h4 class="font-bold text-md">Send me an E-mail</h4>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="outline-none border-b-[1px] border-secondary py-3 px-1 bg-primary-negative placeholder:font-bold placeholder:text-secondary"
+        placeholder="Your name..."
+        required
+      />
+
+      <textarea
+        name="message"
+        id="message"
+        class="outline-none border-b-[1px] border-secondary py-3 px-1 bg-primary-negative placeholder:font-bold placeholder:text-secondary h-auto min-h-[250px]"
+        placeholder="Your Message..."
+        required></textarea>
+      <button
+        id="sendBtn"
+        type="button"
+        class="px-12 py-4 bg-accent text-black hover:scale-110 transition-all duration-500 hiddenElement font-bold"
+        >Send</button
+      >
+    </form>
+
+    <div class="flex flex-col gap-6 font-bold hiddenElement">
+      <h3>Social media</h3>
+      <ul class="flex flex-col gap-6">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/facundo-toloza-547469240/"
+            class="flex gap-2 items-center font-medium"
+          >
+            <Linkedin />
+            <h4 class="text-primary">Linkedin</h4>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://github.com/facutolozadev"
+            class="flex gap-2 items-center font-medium"
+          >
+            <GitHubIcon />
+            <h4 class="text-primary">Github</h4>
+          </a>
+        </li>
+        <li class="font-medium text-sm">facundotoloza23@gmail.com</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  const sendBtn = document.getElementById("sendBtn") as HTMLButtonElement;
+  const nameInput = document.getElementById("name") as HTMLInputElement;
+  const messageInput = document.getElementById(
+    "message"
+  ) as HTMLTextAreaElement;
+
+  sendBtn.addEventListener("click", () => {
+    prepareEmail();
+  });
+
+  function prepareEmail() {
+    var name = nameInput.value;
+    var message = messageInput.value;
+    var subject = encodeURIComponent("Message from " + name);
+    var body = encodeURIComponent(message);
+
+    var mailtoLink =
+      "mailto:facundotoloza23@gmail.com" + "?subject=" + subject + "&body=" + body;
+    window.location.href = mailtoLink;
+  }
+</script>

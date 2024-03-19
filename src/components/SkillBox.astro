@@ -1,0 +1,29 @@
+---
+import { SKILLS} from "../consts/skills";
+import Skill from './Skill.astro'
+
+type Props = {
+    section: string
+    title: string
+    sx?: string
+}
+
+const { section, title, sx } = Astro.props;
+---
+
+<div class="  flex flex-col gap-2 w-[336px]">
+  <span class="text-secondary font-bold">{title}</span>
+  <div class={`w-full border-accent border-[10px] ${sx}`}>
+    <ul class="w-full mx-4 flex flex-col gap-2 items-start ">
+      {
+        SKILLS.map((skill , index) => {
+          if (skill.section === section) {
+            return <Skill skill={skill} key={index}/>
+
+                
+          }
+        })
+      }
+    </ul>
+  </div>
+</div>

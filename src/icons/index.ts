@@ -1,0 +1,12 @@
+export { default as AngularIcon } from "./angular.astro";
+export { default as AstroIcon } from "./astrojs.astro";
+export { default as GitIcon } from "./git.astro";
+export { default as GitHubIcon } from "./github.astro";
+export { default as HTMLIcon } from "./html.astro";
+export { default as JavascriptIcon } from "./javascript.astro";
+export { default as NextJSIcon } from "./nextjs.astro";
+export { default as ReactIcon } from "./react.astro";
+export { default as TailwindIcon } from "./tailwind.astro";
+export { default as TypeScriptIcon } from "./typescript.astro";
+export { default as MaterialIcon } from "./material.astro";
+export { default as FirebaseIcon } from "./firebase.astro";

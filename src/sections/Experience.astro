@@ -1,0 +1,30 @@
+---
+import Button from '../components/Button.astro'
+import Arrow from '../icons/arrow.astro'
+
+---
+
+<section id="experience" class="min-h-screen w-full flex flex-col items-center gap-12 justify-center py-24">
+  <h2 class="text-3xl font-bold hiddenElement  lg:mt-0 ">Experience</h2>
+
+  <div class="flex flex-col  gap-2 items-center">
+    <img src="/public/images/Todev.png" alt="ToDev logotype" class="hiddenElement" />
+    <h2 class="font-bold hiddenElement">ToDev Agency</h2>
+    <h4 class="font-bold text-secondary hiddenElement">Owner</h4>
+    <h4 class="font-bold text-secondary hiddenElement">2023 - Present</h4>
+    <p class="text-center max-w-[400px] hiddenElement text-sm">
+      This is my digital agency. We specialize in creating software to solve problems. Currently,
+      our services include:
+      <br />
+      <ul class="flex flex-col gap-2 list-disc text-center text-sm">
+        <li class="hiddenElement">E-commerce App (Next.js and Vercel)</li>
+        <li class="hiddenElement">Web Applications (React and Django)</li>
+      </ul>
+    </p>
+  </div>
+
+  <Arrow />
+
+  <h3 class="text-xl font-bold hiddenElement text-center">Ready to expand my horizon! :)</h3>
+  <a href="#contact" class="px-12 py-4 bg-accent text-black hover:scale-110 transition-all duration-500 hiddenElement font-bold cursor-pointer">Hire me!</a>
+</section>

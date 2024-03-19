@@ -1,0 +1,55 @@
+---
+import Button from "../components/Button.astro";
+import Project1 from "../images/project1.png";
+
+const { project, visit } = Astro.props;
+const Description = project.Description;
+---
+
+<div
+  class="slider-section w-full h-full flex flex-col items-center justify-center gap-2 lg:flex-row lg:min-w-[900px] xl:min-w-[1150px]"
+>
+  <div class="h-full w-full flex flex-col gap-2 items-center lg:gap-4">
+    <div class="w-full flex flex-col gap-2 items-center lg:items-start">
+      <h2 class="font-bold max-w-[80%] text-center lg:text-left w-full">
+        {project.title}
+      </h2>
+      <h4 class="text-secondary font-bold max-w-[80%] text-center lg:text-left">
+        {project.subtitle}
+      </h4>
+
+      <div class="flex w-full min-w-[368px] px-12 lg:px-0 lg:w-48">
+        {project.technologies.map((Tech: any) => <Tech />)}
+      </div>
+    </div>
+
+    <div class="w-full h-auto lg:w-[446px] lg:h-[246px] overflow-hidden self-start">
+      <img
+        src={project.image}
+        alt={project.title}
+        class="object-cover w-full h-full"
+      />
+    </div>
+
+    {
+      visit && (
+        <a class="px-12 py-4 bg-accent text-black hover:scale-110 transition-all duration-500 font-bold w-full text-center">
+          Visit
+        </a>
+      )
+    }
+  </div>
+
+  <div class="w-full h-40 lg:h-auto">
+    <Description />
+  </div>
+</div>
+
+<script>
+  const showDescBtn = document.getElementById("show-desc-btn");
+  const description = document.getElementById("description");
+
+  showDescBtn?.addEventListener("click", () => {
+    console.log("culo");
+  });
+</script>

@@ -1,0 +1,124 @@
+---
+import { PROJECTS } from "../consts/projects.ts";
+import Project from "../components/Project.astro";
+import Chevron from "../icons/chevron.astro";
+export { PROJECTS };
+---
+
+<section
+  id="projects"
+  class="w-full min-h-screen flex flex-col items-center justify-center px-1 2xl:px-36 lg:gap-12 pb-8 relative py-36 lg:py-0"
+>
+
+  <h2 class="text-3xl font-bold hiddenElement">My Projects</h2>
+  <div class="flex w-full gap-2 items-center justify-center mt-12 ">
+    <button id="prevBtn" class="bg-black bg-opacity-50 py-6 px-2 ">
+      <Chevron />
+    </button>
+
+    <div
+      id="slider-container"
+      class="w-full hiddenElement overflow-x-hidden max-w-[384px]  lg:w-screen lg:max-w-[900px] xl:max-w-[1150px] m-auto"
+    >
+      <div id="slider" class="flex relative gap-2 ml-[-100%] w-full">
+        {
+          PROJECTS.map((project, index) => (
+            <Project key={index}  project={project} />
+          ))
+        }
+      </div>
+    </div>
+
+    <button id="nextBtn" class="bg-black bg-opacity-50 py-6 px-2 rotate-180">
+      <Chevron />
+    </button>
+  </div>
+  <div class="inline-flex gap-2 mt-2">
+    {
+      PROJECTS.map((_, index) => (
+        <div class={`project-point h-3 w-3 rounded-full`} />
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  const slider = document.getElementById("slider");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const projectPoints = document.querySelectorAll(".project-point");
+  let currentIndex = 0;
+  let sliderSections = slider!.querySelectorAll(".slider-section");
+
+  const paintProjectPoint = () => {
+    projectPoints.forEach((point, index) => {
+      if (index !== currentIndex) {
+        point.classList.remove("bg-accent");
+        point.classList.add("bg-white");
+      } else {
+        point.classList.remove("bg-white");
+        point.classList.add("bg-accent");
+      }
+    });
+  };
+
+  slider!.insertAdjacentElement(
+    "afterbegin",
+    sliderSections![sliderSections.length - 1]
+  );
+
+  paintProjectPoint();
+
+  const next = () => {
+    if (slider) {
+      let sliderSections = slider.querySelectorAll(".slider-section");
+      let firstSliderElement = sliderSections[0];
+      slider.style.marginLeft = "-200%";
+      slider.style.transition = ".5s";
+
+      setTimeout(() => {
+        slider.insertAdjacentElement("beforeend", firstSliderElement);
+        if (currentIndex < sliderSections.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        paintProjectPoint();
+        slider.style.transition = "none";
+        slider.style.marginLeft = "-100%";
+      }, 500);
+    }
+  };
+
+  const previous = () => {
+    if (slider) {
+      let sliderSection = document.querySelectorAll(".slider-section");
+      let lastSliderElement = sliderSection[sliderSection.length - 1];
+      slider.style.marginLeft = "0";
+      slider.style.transition = ".5s";
+
+      setTimeout(() => {
+        slider.insertAdjacentElement("afterbegin", lastSliderElement);
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = sliderSections.length - 1;
+        }
+        paintProjectPoint();
+        slider.style.transition = "none";
+        slider.style.marginLeft = "-100%";
+      }, 500);
+    }
+  };
+
+ 
+
+  nextBtn?.addEventListener("click", function () {
+    next();
+  });
+  prevBtn?.addEventListener("click", function () {
+    previous();
+  });
+
+ 
+</script>

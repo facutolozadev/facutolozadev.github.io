@@ -1,0 +1,93 @@
+---
+import Nav from "../components/Nav.astro";
+---
+
+<section class="h-screen flex flex-col items-center justify-center">
+  <div class="w-full absolute h-full inline-flex justify-center items-center overflow-hidden">
+    <div class="h-[100px] w-[100px] bg-accent rounded-full blur-3xl opacity-40 relative shape1"></div>
+    <div class="h-[100px] w-[100px] bg-accent rounded-full blur-3xl opacity-40 relative shape2"></div>
+  </div>
+  <div class="m-auto lg:flex lg:gap-24">
+    <div class="m-auto">
+      <h1
+        class="font-bold text-6xl lg:text-8xl lg:text-left text-center fadeInAnimation"
+      >
+        Facundo <br /> Toloza
+      </h1>
+      <h2 id="developer-text" class="w-fit text-xl">Frontend developer.</h2>
+    </div>
+    <aside>
+      <Nav />
+    </aside>
+  </div>
+  <div class="text-center flex flex-col items-center gap-4 mb-12">
+    <small>Come on! Scroll</small>
+    <span class="animate-bounce">
+      <svg
+        width="12"
+        height="20"
+        viewBox="0 0 46 54"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M23 54L0.5 31.5L3.6725 28.3275L20.75 45.3825V0H25.25V45.3825L42.3275 28.3275L45.5 31.5L23 54Z"
+          fill="white"></path>
+      </svg>
+    </span>
+  </div>
+
+  
+</section>
+
+<style>
+  /**=======WRITING ANIMATION========== */
+  h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 0.15em;
+   
+    animation:
+      typing 3.5s steps(40, end);
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  /**=======WRITING ANIMATION========== */
+
+
+ 
+  .shape1 {
+    animation: shape1Animation 10s infinite;
+  }
+
+  .shape2 {
+    animation: shape2Animation 10s infinite
+  }
+ 
+
+  @keyframes shape1Animation {
+    0%{top: -100px; left: -500px}
+    25%{top: 200px; left: -200px }
+    50%{top: 200px; left: 400px }
+    75%{top: -100px; left: -200px }
+    100%{top: -100px; left: -500px}
+  }
+  
+  @keyframes shape2Animation {
+    0% { top: -100px; left: 500px; }
+  25% { top: -100px; left: 0px; }
+  50% { top: 200px; left: -200px; }
+  75% { top: 200px; left: 400px; }
+  100% { top: -100px; left: 500px; }
+  }
+
+ 
+</style>
