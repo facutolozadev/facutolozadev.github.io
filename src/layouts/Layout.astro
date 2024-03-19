@@ -87,10 +87,14 @@ const { title } = Astro.props;
     font-family: Neue Metana;
     background: var(--background-color);
     color: var(--color-primary);
-    scroll-snap-type: y mandatory;
+
     scroll-behavior: smooth;
   }
-
+  @media (min-width: 768px) {
+    html {
+      scroll-snap-type: y mandatory;
+    }
+  }
   section {
     scroll-snap-align: start;
   }
