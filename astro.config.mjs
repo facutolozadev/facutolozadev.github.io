@@ -6,5 +6,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://facutolozadev.github.io/',
-  base: 'https://github.com/facutolozadev/facundotolozadev-portfolio.git'
+  base: 'https://github.com/facutolozadev/facutolozadev.github.io.git'
 });
