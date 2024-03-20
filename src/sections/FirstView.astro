@@ -3,7 +3,7 @@ import Nav from "../components/Nav.astro";
 ---
 
 <section class="h-screen flex flex-col items-center justify-center">
-  <div class="w-full absolute h-full inline-flex justify-center items-center overflow-hidden">
+  <div class="w-full absolute h-full inline-flex justify-center items-center overflow-hidden z-[-10]">
     <div class="h-[100px] w-[100px] bg-accent rounded-full blur-3xl opacity-40 relative shape1"></div>
     <div class="h-[100px] w-[100px] bg-accent rounded-full blur-3xl opacity-40 relative shape2"></div>
   </div>
@@ -14,7 +14,7 @@ import Nav from "../components/Nav.astro";
       >
         Facundo <br /> Toloza
       </h1>
-      <h2 id="developer-text" class="w-fit text-xl">Frontend developer.</h2>
+      <h2 id="developer-text" class="w-fit text-xl font-light">Frontend developer.</h2>
     </div>
     <aside>
       <Nav />

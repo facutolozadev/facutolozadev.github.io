@@ -1,4 +1,4 @@
-<header class="w-full h-20 fixed flex justify-end p-4 z-20">
+<header class="w-full h-20 lg:hidden fixed flex justify-end p-4 z-20">
   <div
     id="menu-btn"
     class="flex flex-col gap-2 items-end cursor-pointer lg:hidden"
@@ -14,11 +14,11 @@
   }
 
   .active > span:nth-child(1) {
-    animation: animateBtnLine1 1s forwards;
+    animation: animateBtnLine1 .3s forwards;
   }
 
   .active > span:nth-child(2) {
-    animation: animateBtnLine2 1s forwards;
+    animation: animateBtnLine2 .3s forwards;
   }
 
   @keyframes animateBtnLine1 {
