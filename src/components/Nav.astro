@@ -1,4 +1,4 @@
-<nav id="nav" class="py-24 lg:py-0 h-full w-full bg-accent text-black fixed top-0 lg:right-0 right-[-100%] z-10 transition-all lg:relative lg:w-[266px] fadeInAnimation">
+<nav id="nav" class="py-24 fallen-poster-animation lg:py-0 h-full lg:min-h-[389px] w-full bg-accent text-black fixed top-0 lg:right-0 right-[-100%] z-10 transition-all lg:relative lg:w-[266px] ">
   <ul class="flex flex-col items-center justify-center h-full">
     <li class="nav-link font-bold text-xl w-full text-center h-full cursor-pointer hover:bg-muted-accent">
       <a href="#who-am-i" class="w-full h-full flex items-center justify-center"><span class="fill-text">Who Am I?</span></a>
@@ -31,6 +31,30 @@
       background-position: 0 0;
     }
   }
+
+  @keyframes fallenPoster {
+    0% {
+      transform: rotate(0deg);
+    }
+    50%{
+      transform: rotate(-20deg)
+    }
+    75%{
+      transform: rotate(-16deg)
+    }
+    100%{
+      transform: rotate(-18deg)
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .fallen-poster-animation {
+      animation: fallenPoster 2s ease-in-out forwards 3s;
+      transform-origin: top right;
+    }
+  }
+
+  
 
   .fill-text {
     position: relative;

@@ -1,0 +1,39 @@
+<div class="fixed bottom-2 right-2 md:bottom-12 md:right-12 bg-accent text-black flex items-center gap-4 p-4 rounded-lg cursor-pointer bounce">
+    <h4 class="font-semibold">CV</h4>
+</div>
+
+<style>
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0) rotate(0);
+        }
+        25% {
+            transform: translateY(-20px) rotate(0);
+        }
+        50% {
+            transform: translateY(0);
+        }
+        75% {
+            transform: rotate(30deg);
+        }
+    }
+
+    .bounce {
+        animation: bounce 3s ease-in-out infinite 3.5s;
+    }
+    .bounce.paused {
+        animation-play-state: paused; 
+    }
+</style>
+
+<script>
+    const div = document.querySelector('.bounce');
+    div?.addEventListener('animationiteration', () => {
+        setTimeout(() => {
+            div.classList.add('paused');
+            setTimeout(() => {
+                div.classList.remove('paused');
+            }, 2000);
+        }, 0); 
+    });
+</script>
