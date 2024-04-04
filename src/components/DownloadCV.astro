@@ -1,9 +1,9 @@
-<div class="fixed bottom-2 right-2 md:bottom-12 md:right-12 bg-accent text-black flex items-center gap-4 p-4 rounded-lg cursor-pointer bounce">
+<a href="/cv.pdf" target="_blank" id="download-cv" download="cv" class="fixed bottom-2 right-2 md:bottom-12 md:right-12 bg-accent text-black flex items-center gap-4 p-4 rounded-lg cursor-pointer bounceAnimation">
     <h4 class="font-semibold">CV</h4>
-</div>
+</a>
 
 <style>
-    @keyframes bounce {
+    @keyframes bounceAnimation {
         0%, 100% {
             transform: translateY(0) rotate(0);
         }
@@ -18,22 +18,24 @@
         }
     }
 
-    .bounce {
-        animation: bounce 3s ease-in-out infinite 3.5s;
+    .bounceAnimation {
+        animation: bounceAnimation 3s ease-in-out infinite 3.5s;
     }
-    .bounce.paused {
+    .bounceAnimation.paused {
         animation-play-state: paused; 
     }
 </style>
 
 <script>
-    const div = document.querySelector('.bounce');
-    div?.addEventListener('animationiteration', () => {
+    const downloadButton = document.getElementById('download-cv');
+    downloadButton?.addEventListener('animationiteration', () => {
         setTimeout(() => {
-            div.classList.add('paused');
+            downloadButton.classList.add('paused');
             setTimeout(() => {
-                div.classList.remove('paused');
+                downloadButton.classList.remove('paused');
             }, 2000);
         }, 0); 
     });
+
+ 
 </script>
