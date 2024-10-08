@@ -2,7 +2,7 @@
 import Button from "../components/Button.astro";
 import Project1 from "../images/project1.png";
 
-const { project, visit } = Astro.props;
+const { project, link } = Astro.props;
 const Description = project.Description;
 ---
 
@@ -32,8 +32,8 @@ const Description = project.Description;
     </div>
 
     {
-      visit && (
-        <a class="px-12 py-4 bg-accent text-black hover:scale-110 transition-all duration-500 font-bold w-full text-center">
+      link && (
+        <a target="_blank"  href={link} class="px-12 py-4 bg-accent text-black  transition-all duration-500 font-bold w-full text-center">
           Visit
         </a>
       )

@@ -7,7 +7,8 @@ import {
     NextJSIcon,
     ReactIcon,
     TailwindIcon,
-    TypeScriptIcon
+    TypeScriptIcon,
+    CypressIcon
 } from '../icons/index.ts'
 
 export interface SkillType {
@@ -67,4 +68,9 @@ export const SKILLS : SkillType[] = [
         Icon: GitHubIcon,
         section: 'basics'
     },
+    {
+        name: 'Cypress',
+        Icon: CypressIcon,
+        section: 'learning' 
+    }
 ]

@@ -24,7 +24,7 @@ export { PROJECTS };
       <div id="slider" class="flex relative gap-2 ml-[-100%] w-full">
         {
           PROJECTS.map((project, index) => (
-            <Project key={index}  project={project} />
+            <Project link={project.availablePage} key={index}  project={project} />
           ))
         }
       </div>

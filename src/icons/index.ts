@@ -10,3 +10,4 @@ export { default as TailwindIcon } from "./tailwind.astro";
 export { default as TypeScriptIcon } from "./typescript.astro";
 export { default as MaterialIcon } from "./material.astro";
 export { default as FirebaseIcon } from "./firebase.astro";
+export { default as CypressIcon } from "./cypress.astro";
